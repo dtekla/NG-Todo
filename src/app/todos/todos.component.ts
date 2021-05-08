@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Todo} from "./todo.interface";
 import {TodoService} from "./todo.service";
+import {map} from "rxjs/operators";
 
 
 @Component({
@@ -34,17 +35,21 @@ export class TodosComponent implements OnInit {
   onClick() {
     console.log(this.todoForm.value.newTodo);
 
-    const createTodo:Todo = {
+    const createTodo= {
       id: this.idForTodo,
       body: this.todoForm.value.newTodo,
       isCompleted: false
-    }
+    } as Todo
 
     this.todoList.push(createTodo);
 
     this.todoForm.reset();
 
     this.idForTodo++;
+
+    this.todoService.addTodo(createTodo).subscribe(result => {
+      console.log(result);
+    })
   }
 
   validate() {
@@ -60,6 +65,10 @@ export class TodosComponent implements OnInit {
   deleteTodo(id: number) {
     console.log(this.todoList);
     this.todoList = this.todoList.filter(todo => todo.id !== id);
+
+    this.todoService.deleteTodo(id).subscribe(result => {
+      console.log(result);
+    })
   }
 
   addCompleted(i: number) {
@@ -69,9 +78,8 @@ export class TodosComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.idForTodo =1;
-   this.todoService.getTodos().subscribe(data => {
-      console.log(data);
+    this.todoService.getTodos().subscribe(result => {
+      this.todoList = result;
     })
   }
 
