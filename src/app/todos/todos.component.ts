@@ -12,6 +12,7 @@ export class TodosComponent implements OnInit {
   inputIsValid: boolean = false;
   todoList: Todo[] = [];
   idForTodo:number;
+  isCompleted:boolean = false;
 
 
   constructor(private fb: FormBuilder) { }
@@ -34,6 +35,7 @@ export class TodosComponent implements OnInit {
     const createTodo:Todo = {
       id: this.idForTodo,
       body: this.todoForm.value.newTodo,
+      isCompleted: false
     }
 
     this.todoList.push(createTodo);
@@ -57,8 +59,8 @@ export class TodosComponent implements OnInit {
     this.todoList = this.todoList.filter(todo => todo.id !== id);
   }
 
-  addCompleted() {
-    
+  addCompleted(i: number) {
+    this.todoList[i].isCompleted = !this.todoList[i].isCompleted;
   }
 
 

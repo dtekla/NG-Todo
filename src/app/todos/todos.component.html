@@ -1,20 +1,22 @@
-<form [formGroup]="todoForm">
+<mat-card class="container">
+    <form id="todoForm" [formGroup]="todoForm">
 
-    <label for="todo">Todo</label>
-    <input type="text" id="todo" (keyup)="validate()" formControlName="newTodo">
-    <button (click)="onClick()" [disabled]="todoForm.invalid">add todo</button>
+        <label for="todo">Todo</label>
+        <input type="text" id="todo" placeholder="type your todo" (keyup)="validate()" formControlName="newTodo">
+        <button mat-raised-button color="primary" (click)="onClick()" [disabled]="todoForm.invalid">add todo</button>
 
-    <div class="error" *ngIf="!inputIsValid && newTodo?.touched">
-       New todo should be at least 6 har long!
+        <div class="error" *ngIf="!inputIsValid && newTodo?.touched">
+            New todo should be at least 6 har long!
+        </div>
+
+    </form>
+
+    <div class="todoList">
+        <mat-card *ngFor="let todo of todoList; let i = index" (dblclick)="addCompleted(i)">
+            <mat-card-subtitle>{{i}}</mat-card-subtitle>
+            <mat-card-content [ngClass]="{'completed': todo.isCompleted}">{{todo.body}}</mat-card-content>
+            <button mat-raised-button color="accent" (click)="editTodo()"> edit </button>
+            <button mat-raised-button color="warn" (click)="deleteTodo(todo.id)"> delete </button>
+        </mat-card>
     </div>
-
-</form>
-
-<div>
-    <div *ngFor="let todo of todoList; let i = index" (dblclick)="addCompleted()">
-        <span>{{i}}</span>
-        <p>{{todo.body}}</p>
-        <button (click)="editTodo()"> edit </button>
-        <button (click)="deleteTodo(todo.id)"> delete </button>
-    </div>
-</div>
+</mat-card>
