@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build"
+    "build": "ng build",
+    "start db": "json-server --watch ./mocks/db.json"
   },
   "private": true,
   "dependencies": {

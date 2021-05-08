@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "body": "eating chocolate",
+      "isCompleted": false
+    },
+    {
+      "id": 2,
+      "body": "cleaning the house",
+      "isCompleted": false
+    },
+    {
+      "id": 3,
+      "body": "walking",
+      "isCompleted": false
+    }
+  ]
+}

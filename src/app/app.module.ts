@@ -8,23 +8,22 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {TodoService} from "./todos/todo.service";
+import {HttpClientModule} from "@angular/common/http";
+import {CommonModule} from "@angular/common";
+import {TodoModule} from "./todos/todo.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    TodosComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatCardModule,
-    MatButtonModule
+    TodoModule,
+    CommonModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Todo} from "./todo.interface";
+import {TodoService} from "./todo.service";
+
 
 @Component({
   selector: 'app-todos',
@@ -15,7 +17,7 @@ export class TodosComponent implements OnInit {
   isCompleted:boolean = false;
 
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private todoService: TodoService) { }
 
   todoForm: FormGroup = this.fb.group({
     newTodo: [null, [
@@ -56,6 +58,7 @@ export class TodosComponent implements OnInit {
   }
 
   deleteTodo(id: number) {
+    console.log(this.todoList);
     this.todoList = this.todoList.filter(todo => todo.id !== id);
   }
 
@@ -66,7 +69,10 @@ export class TodosComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.idForTodo = 0;
+    this.idForTodo =1;
+   this.todoService.getTodos().subscribe(data => {
+      console.log(data);
+    })
   }
 
 }
