@@ -1,0 +1,20 @@
+<form [formGroup]="todoForm">
+
+    <label for="todo">Todo</label>
+    <input type="text" id="todo" (keyup)="validate()" formControlName="newTodo">
+    <button (click)="onClick()" [disabled]="todoForm.invalid">add todo</button>
+
+    <div class="error" *ngIf="!inputIsValid && newTodo?.touched">
+       New todo should be at least 6 har long!
+    </div>
+
+</form>
+
+<div>
+    <div *ngFor="let todo of todoList; let i = index" (dblclick)="addCompleted()">
+        <span>{{i}}</span>
+        <p>{{todo.body}}</p>
+        <button (click)="editTodo()"> edit </button>
+        <button (click)="deleteTodo(todo.id)"> delete </button>
+    </div>
+</div>

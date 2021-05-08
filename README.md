@@ -31,7 +31,7 @@ Invision wireframe: https://projects.invisionapp.com/freehand/document/RGhiq060r
 - create some mock items (3-5 items) 
 - the API path should be localhost:3000/todos
 - create a service for http requests before hand, it should handle all basic CRUD eperations
-- create an interface for Todo
+- create an interface for TodoInterface
 - IMPORTANT! create db.json outside src folder!
 
 
