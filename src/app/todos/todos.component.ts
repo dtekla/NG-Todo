@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Todo} from "./todo.interface";
 import {TodoService} from "./todo.service";
-import {map} from "rxjs/operators";
+
 
 
 @Component({

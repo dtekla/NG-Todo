@@ -22,7 +22,8 @@ import {TodoModule} from "./todos/todo.module";
   imports: [
     BrowserModule,
     TodoModule,
-    CommonModule
+    CommonModule,
+      MatCardModule
   ],
   bootstrap: [AppComponent]
 })

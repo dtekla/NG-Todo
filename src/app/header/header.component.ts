@@ -3,11 +3,22 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'todo-header',
   template: `
-    <h1>
-      NG Todo
-    </h1>
+    <mat-card>
+      <mat-card-title>
+        NG Todo
+      </mat-card-title>
+      
+    </mat-card>
   `,
-  styles: [
+  styles: [`
+  mat-card{
+    background-color: #E27D5F;
+  }
+  
+  mat-card-title{
+    font-size: 26px;
+  }
+  `
   ]
 })
 export class HeaderComponent implements OnInit {
