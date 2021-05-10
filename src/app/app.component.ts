@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'todo-root',
   template: `
     <todo-header></todo-header>
-    <app-todos></app-todos>
+    <router-outlet></router-outlet>
   `,
   styles: []
 })

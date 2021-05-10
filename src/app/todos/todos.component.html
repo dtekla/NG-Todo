@@ -15,8 +15,14 @@
         <mat-card *ngFor="let todo of todoList; let i = index" (dblclick)="addCompleted(i)">
             <mat-card-subtitle>{{i}}</mat-card-subtitle>
             <mat-card-content [ngClass]="{'completed': todo.isCompleted}">{{todo.body}}</mat-card-content>
-            <button class="edit-btn" mat-raised-button color="accent" (click)="editTodo()"> edit </button>
+            <button class="edit-btn"
+                    mat-raised-button
+                    color="accent"
+                    (click)="editTodo()"
+                    routerLink="/edit"
+                    > edit </button>
             <button class="delete-btn" mat-raised-button color="warn" (click)="deleteTodo(todo.id)"> delete </button>
         </mat-card>
     </div>
 </mat-card>
+

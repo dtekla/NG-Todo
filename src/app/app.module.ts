@@ -3,27 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { TodosComponent } from './todos/todos.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {TodoService} from "./todos/todo.service";
-import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import {TodoModule} from "./todos/todo.module";
+import { EditTodoComponent } from './edit-todo/edit-todo.component';
+import {AppRoutingModule} from "./app-routing.module";
+import {RouterModule} from "@angular/router";
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    EditTodoComponent
   ],
   imports: [
     BrowserModule,
     TodoModule,
     CommonModule,
-      MatCardModule
+    MatCardModule,
+    AppRoutingModule,
+      RouterModule
+
   ],
   bootstrap: [AppComponent]
 })
