@@ -9,6 +9,8 @@ import {TodoModule} from "./todos/todo.module";
 import { EditTodoComponent } from './edit-todo/edit-todo.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {RouterModule} from "@angular/router";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatButtonModule} from "@angular/material/button";
 
 
 
@@ -24,9 +26,11 @@ import {RouterModule} from "@angular/router";
     CommonModule,
     MatCardModule,
     AppRoutingModule,
-      RouterModule
-
+    RouterModule,
+    ReactiveFormsModule,
+    MatButtonModule
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

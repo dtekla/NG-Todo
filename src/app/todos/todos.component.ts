@@ -58,10 +58,6 @@ export class TodosComponent implements OnInit {
     }
   }
 
-  editTodo() {
-
-  }
-
   deleteTodo(id: number) {
     console.log(this.todoList);
     this.todoList = this.todoList.filter(todo => todo.id !== id);

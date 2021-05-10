@@ -1,0 +1,9 @@
+<mat-card class="container">
+
+    <form id="editForm" [formGroup]="editForm">
+        <label for="todo">Edit todo</label>
+        <input type="text" id="todo" placeholder="edit your todo" formControlName="editedTodo">
+        <button mat-raised-button color="primary" (click)="onClick()" [disabled]="editForm.invalid">save</button>
+    </form>
+
+</mat-card>

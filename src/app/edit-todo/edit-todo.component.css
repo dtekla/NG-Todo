@@ -4,7 +4,7 @@
     background-color: #E8A87C;
 }
 
-#todoForm{
+#editForm{
     width: 80%;
     margin: 0 auto;
     display: grid;
@@ -12,60 +12,24 @@
     grid-template-rows: repeat(3, 1fr);
 }
 
-#todoForm label{
+#editForm label{
     grid-column: 1;
     grid-row: 1;
     font-size: 16px;
 }
 
-#todoForm input{
+#editForm input{
     grid-column: 1;
     grid-row: 2;
     margin-right: 10px;
 }
 
-#todoForm button{
+#editForm button{
     grid-column: 2;
     grid-row: 2;
     width: 40%;
 }
 
-#todoForm #errorBox{
-    grid-column: 1;
-    grid-row: 3;
-}
-
-.todoList {
-    margin-top: 10px;
-
-}
-
-.todoList mat-card {
-    flex-direction: row;
-    padding: 20px;
-    width: 80%;
-    margin: 0 auto;
-    background-color: #C38D9D;
-    display: grid;
-    grid-template-columns: 30px 2fr repeat(2, 1fr);
-    grid-template-rows: 1fr;
-}
-
-.todoList mat-card-subtitle {
-    grid-column: 1;
-    width: 50px;
-}
-
-.edit-btn, .delete-btn{
-    height: 40px;
-    margin-right: 5px;
-}
-
-.error {
-    color: #F44336;
-    font-size: 10px;
-    margin-top: 0;
-}
 
 input.ng-invalid.ng-touched {
     border: 2px solid #F44336;
@@ -77,8 +41,4 @@ input.ng-valid.ng-touched {
     border: 2px solid #40B3A2;
     border-left: 6px solid #40B3A2;
     outline: 2px solid #40B3A2;
-}
-
-.completed {
-    text-decoration: line-through;
 }
