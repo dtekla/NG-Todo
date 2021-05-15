@@ -1,9 +1,26 @@
 <mat-card class="container">
 
     <form id="editForm" [formGroup]="editForm">
-        <label for="todo">Edit todo</label>
-        <input type="text" id="todo" placeholder="edit your todo" formControlName="editedTodo">
-        <button mat-raised-button color="primary" (click)="onClick()" [disabled]="editForm.invalid">save</button>
+
+        <div class="editForm-container">
+            <mat-form-field>
+                <mat-label>Edit Todo</mat-label>
+                <textarea type="text" id="todo" matInput [placeholder]="todo.body" formControlName="editedTodo"></textarea>
+            </mat-form-field>
+            <button mat-raised-button routerLink="" color="primary" (click)="onClick()" [disabled]="editForm.invalid">save</button>
+        </div>
+
+
+
+        <!--<label for="todo">Edit todo</label>
+        <input type="text"   formControlName="editedTodo" [placeholder]="todo.body">
+        <button mat-raised-button routerLink="" color="primary" (click)="onClick()" [disabled]="editForm.invalid">save</button>-->
+
+        <div id="error-containers" *ngIf="newName?.invalid && newName?.touched">
+            <p class="error" *ngIf="newName?.errors?.required">
+                Please fill your todo!
+            </p>
+        </div>
     </form>
 
 </mat-card>

@@ -35,6 +35,14 @@ export class TodoService {
       return  this.http.delete<Todo>(TodoService.API_URL +  `/${id}`)
     }
 
+    getTodoById(id: number):Observable<Todo>{
+        return this.http.get<Todo>(TodoService.API_URL + `/${id}`)
+    }
+
+    updateTodo(todo: Todo):Observable<Todo>{
+        return this.http.put<Todo>(TodoService.API_URL + `/${todo.id}`, todo)
+    }
+
     handleError(error: HttpErrorResponse): Observable<string> {
 
         let errorMessage = '';

@@ -1,9 +1,12 @@
 <mat-card class="container">
     <form id="todoForm" [formGroup]="todoForm">
-
-        <label for="todo">Todo</label>
-        <input type="text" id="todo" placeholder="type your todo" (keyup)="validate()" formControlName="newTodo">
-        <button mat-raised-button color="primary" (click)="onClick()" [disabled]="todoForm.invalid">add todo</button>
+        <div class="todoForm-container">
+            <mat-form-field>
+                <mat-label>Todo</mat-label>
+                <textarea type="text" id="todo" matInput placeholder="type your todo" (keyup)="validate()" formControlName="newTodo"></textarea>
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="onClick()" [disabled]="todoForm.invalid">add todo</button>
+        </div>
 
         <div id="errorBox" class="error" *ngIf="newTodo?.invalid && newTodo?.touched">
             New todo should be at least 6 har long!
@@ -11,17 +14,17 @@
 
     </form>
 
-    <div class="todoList">
-        <mat-card *ngFor="let todo of todoList; let i = index" (dblclick)="addCompleted(i)">
-            <mat-card-subtitle>{{i}}</mat-card-subtitle>
-            <mat-card-content [ngClass]="{'completed': todo.isCompleted}">{{todo.body}}</mat-card-content>
-            <button class="edit-btn"
-                    mat-raised-button
-                    color="accent"
-                    routerLink="/edit"
-                    > edit </button>
-            <button class="delete-btn" mat-raised-button color="warn" (click)="deleteTodo(todo.id)"> delete </button>
-        </mat-card>
+    <div class="todoList_container">
+        <div class="todoList" *ngFor="let todo of todoList; let i = index" (dblclick)="addCompleted(i)">
+            <mat-card>
+                <mat-card-subtitle>{{i}}</mat-card-subtitle>
+                <mat-card-content [ngClass]="{'completed': todo.isCompleted}">{{todo.body}}</mat-card-content>
+            </mat-card>
+            <div class="todoList-icons">
+                <mat-icon class="todoList-icons_edit" [routerLink]="['/edit', todo.id]">edit</mat-icon>
+                <mat-icon class="todoList-icons_delete" (click)="deleteTodo(todo.id)">delete_forever</mat-icon>
+            </div>
+        </div>
     </div>
 </mat-card>
 

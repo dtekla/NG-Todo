@@ -7,7 +7,7 @@ import {TodosComponent} from "./todos/todos.component";
 
 const routes:Routes = [
   {path: "", component: TodosComponent},
-  {path: "edit", component: EditTodoComponent}
+  {path: "edit/:id", component: EditTodoComponent}
 ]
 
 @NgModule({

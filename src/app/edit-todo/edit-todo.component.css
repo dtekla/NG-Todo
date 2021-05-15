@@ -1,44 +1,51 @@
-.container {
-    width: 50%;
-    margin: 30px auto;
-    background-color: #E8A87C;
+@media all and (max-width: 414px){
+
+    .container {
+        width: 80%;
+        margin: 30px auto;
+        background-color: #E8A87C;
+    }
+
+    #editForm{
+        width: 80%;
+        margin: 0 5px;
+    }
+
+    .editForm-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 120%;
+    }
+
+    .editForm-container mat-form-field {
+        width: 90%;
+    }
+
+    .editForm-container button {
+        margin-left: 20px;
+        width: 250px;
+    }
+
+    .error{
+        color: #F44336;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+
+    input.ng-invalid.ng-touched {
+        border: 2px solid #F44336;
+        border-left: 6px solid #F44336;
+        outline: 2px solid #F44336;
+    }
+
+    input.ng-valid.ng-touched {
+        border: 2px solid #40B3A2;
+        border-left: 6px solid #40B3A2;
+        outline: 2px solid #40B3A2;
+    }
+
 }
 
-#editForm{
-    width: 80%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-}
-
-#editForm label{
-    grid-column: 1;
-    grid-row: 1;
-    font-size: 16px;
-}
-
-#editForm input{
-    grid-column: 1;
-    grid-row: 2;
-    margin-right: 10px;
-}
-
-#editForm button{
-    grid-column: 2;
-    grid-row: 2;
-    width: 40%;
-}
-
-
-input.ng-invalid.ng-touched {
-    border: 2px solid #F44336;
-    border-left: 6px solid #F44336;
-    outline: 2px solid #F44336;
-}
-
-input.ng-valid.ng-touched {
-    border: 2px solid #40B3A2;
-    border-left: 6px solid #40B3A2;
-    outline: 2px solid #40B3A2;
-}

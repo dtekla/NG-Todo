@@ -3,23 +3,26 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'todo-header',
   template: `
-    <mat-card>
-      <mat-card-title>
-        NG Todo
-      </mat-card-title>
-      
-    </mat-card>
+    <mat-toolbar>
+        <mat-icon>star_border</mat-icon>
+      <span>Ng Todo</span>
+      <span class="spacer"></span>
+      <button mat-icon-button>
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button >
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
   `,
   styles: [`
   mat-card{
-    background-color: #E27D5F;
-  }
+    background-color: #E27D5F;}
   
-  mat-card-title{
-    font-size: 26px;
+  .spacer {
+    flex: 1 1 auto;
   }
-  `
-  ]
+  `]
 })
 export class HeaderComponent implements OnInit {
 

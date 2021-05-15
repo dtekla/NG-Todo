@@ -8,10 +8,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {RouterModule} from "@angular/router";
-
-
-
-
+import {MatIconModule} from "@angular/material/icon";
+import {MatInputModule} from "@angular/material/input";
 
 
 
@@ -19,15 +17,17 @@ import {RouterModule} from "@angular/router";
   declarations: [
       TodosComponent,
   ],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatButtonModule,
-    RouterModule,
-  ],
+    imports: [
+        CommonModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatButtonModule,
+        RouterModule,
+        MatIconModule,
+        MatInputModule
+    ],
   exports: [TodosComponent],
   providers: [TodoService]
 })
