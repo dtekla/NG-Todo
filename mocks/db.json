@@ -1,7 +1,7 @@
 {
   "todos": [
     {
-      "body": "buy bread and milk",
+      "body": "buy bread, carrot and milk",
       "id": 16,
       "isCompleted": false
     },
@@ -9,6 +9,11 @@
       "body": "go to the cinema",
       "isCompleted": true,
       "id": 17
+    },
+    {
+      "id": 19,
+      "body": "taking the pills",
+      "isCompleted": false
     }
   ]
 }
