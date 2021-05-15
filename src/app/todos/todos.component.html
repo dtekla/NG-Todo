@@ -3,9 +3,11 @@
         <div class="todoForm-container">
             <mat-form-field>
                 <mat-label>Todo</mat-label>
-                <textarea type="text" id="todo" matInput placeholder="type your todo" (keyup)="validate()" formControlName="newTodo"></textarea>
+                <textarea type="text" id="todo" matInput placeholder="type your todo" (keyup)="validate()"
+                          formControlName="newTodo"></textarea>
             </mat-form-field>
-            <button mat-raised-button color="primary" (click)="onClick()" [disabled]="todoForm.invalid">add todo</button>
+            <button mat-raised-button color="primary" (click)="onClick()" [disabled]="todoForm.invalid">add todo
+            </button>
         </div>
 
         <div id="errorBox" class="error" *ngIf="newTodo?.invalid && newTodo?.touched">
@@ -15,9 +17,9 @@
     </form>
 
     <div class="todoList_container">
-        <div class="todoList" *ngFor="let todo of todoList; let i = index" (dblclick)="addCompleted(i)">
-            <mat-card>
-                <mat-card-subtitle>{{i}}</mat-card-subtitle>
+        <div class="todoList" *ngFor="let todo of todoList; let i = index">
+            <mat-card (click)="onDbClick(i)">
+                <mat-card-subtitle>{{i + 1}}</mat-card-subtitle>
                 <mat-card-content [ngClass]="{'completed': todo.isCompleted}">{{todo.body}}</mat-card-content>
             </mat-card>
             <div class="todoList-icons">

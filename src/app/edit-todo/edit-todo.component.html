@@ -10,12 +10,6 @@
             <button mat-raised-button routerLink="" color="primary" (click)="onClick()" [disabled]="editForm.invalid">save</button>
         </div>
 
-
-
-        <!--<label for="todo">Edit todo</label>
-        <input type="text"   formControlName="editedTodo" [placeholder]="todo.body">
-        <button mat-raised-button routerLink="" color="primary" (click)="onClick()" [disabled]="editForm.invalid">save</button>-->
-
         <div id="error-containers" *ngIf="newName?.invalid && newName?.touched">
             <p class="error" *ngIf="newName?.errors?.required">
                 Please fill your todo!

@@ -1,29 +1,14 @@
 {
   "todos": [
     {
-      "body": "do the shopping in tesco",
-      "id": 12,
+      "body": "buy bread and milk",
+      "id": 16,
       "isCompleted": false
     },
     {
-      "body": "walking doggo",
-      "id": 13,
-      "isCompleted": false
-    },
-    {
-      "body": "buy cola",
-      "id": 14,
-      "isCompleted": false
-    },
-    {
-      "body": "doing homework",
-      "isCompleted": false,
-      "id": 15
-    },
-    {
-      "body": "buy bread",
-      "isCompleted": false,
-      "id": 16
+      "body": "go to the cinema",
+      "isCompleted": true,
+      "id": 17
     }
   ]
 }

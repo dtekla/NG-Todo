@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Todo} from "./todo.interface";
-import {catchError, retry, map} from "rxjs/operators";
+import {catchError, retry} from "rxjs/operators";
 import {throwError,} from 'rxjs';
 
 
@@ -17,10 +17,9 @@ export class TodoService {
     constructor(private http: HttpClient) {
     }
 
-    //get all Todos
     getTodos(): Observable<Todo[]> {
         // @ts-ignore
-      return this.http.get<Todo[]>(TodoService.API_URL)
+        return this.http.get<Todo[]>(TodoService.API_URL)
             .pipe(
                 retry(1),
                 catchError(this.handleError),
@@ -28,30 +27,29 @@ export class TodoService {
     }
 
     addTodo(todo: Todo): Observable<Todo> {
-      return this.http.post<Todo>(TodoService.API_URL, todo)
+        return this.http.post<Todo>(TodoService.API_URL, todo)
     }
 
     deleteTodo(id: number): Observable<Todo> {
-      return  this.http.delete<Todo>(TodoService.API_URL +  `/${id}`)
+        return this.http.delete<Todo>(TodoService.API_URL + `/${id}`)
     }
 
-    getTodoById(id: number):Observable<Todo>{
+    getTodoById(id: number): Observable<Todo> {
         return this.http.get<Todo>(TodoService.API_URL + `/${id}`)
     }
 
-    updateTodo(todo: Todo):Observable<Todo>{
+    updateTodo(todo: Todo): Observable<Todo> {
         return this.http.put<Todo>(TodoService.API_URL + `/${todo.id}`, todo)
     }
+
 
     handleError(error: HttpErrorResponse): Observable<string> {
 
         let errorMessage = '';
 
         if (error.error instanceof ProgressEvent) {
-            // client-side error
             errorMessage = `Client-side error: ${error.message}`;
         } else {
-            // server-side error
             errorMessage = `server-side error: Error Code: ${error.status} Message: ${error.message}`;
         }
         return throwError(errorMessage);
